@@ -26,10 +26,7 @@ h1 {
 
 .root {
     display:flex;
-}
-
-main {
-    width: 75%;
+    gap: 2rem;
 }
 
 .details-section {
@@ -94,7 +91,6 @@ aside {
 
 .profile img {
     width: 100%;
-    max-height: 75vh;
     border-radius: 8px;
     box-shadow: 0 0 10px #333, 0 0 20px #333;
 }
@@ -115,19 +111,37 @@ aside {
     color: blue;
 }
 
-@media (min-width: 650px) {
+@media (min-width: 400px) {
 
     body {
-        padding: 1rem 0.5rem;
+        padding: 1rem 0.3rem;
         margin: 0.5rem;
     }
 
     .details-section {
-        margin: 0.2rem;
+        margin: 0.rem;
     }
 
     .container {
         padding: 1rem 0.5rem;
+    }
+
+    .root {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    aside {
+        order: 1;
+    }
+
+    main {
+        width: 100%;
+        order: 2;
+    }
+
+    .profile img {
+        max-height: 50vh;
     }
 }
 
@@ -143,5 +157,23 @@ aside {
 
     .container {
         padding: 1rem 3rem;
+    }
+
+    .root {
+        flex-direction: row;
+        align-items: start;
+    }
+
+    main {
+        order: 1;
+        width: 75%;
+    }
+
+    aside {
+        order: 2;
+    }
+
+    .profile img {
+        max-height: 75vh;
     }
 }
