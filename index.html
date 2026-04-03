@@ -1,68 +1,76 @@
 <!DOCTYPE html>
-<html>
-    <head meta="en">
-        <meta charset="UTF-8">
-        <title>Logaamaadhavan</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logaamaadhavan - Personal Bio</title>
+    <meta name="description" content="Personal biography and details of N.S. LogaaMaadhavan">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="style.css">
+</head>
     <body>
+        <div class="top-left-corner"></div>
+        <div class="top-right-corner"></div>
+        <div class="bottom-left-corner"></div>
+        <div class="bottom-right-corner"></div>
         <header>
             <h1>Personal Data</h1>
         </header>
         <div class="root">
             <main>
                 <section class="details-section">
-                    <div class="accordion-header">
-                        <h3>Personal Details</h3>
-                        <span class="fa fa-chevron-right"></span>
-                    </div>
-                    <div class="container">
+                <button class="accordion-header" aria-expanded="false" aria-controls="personal-details">
+                    <h3>Personal Details</h3>
+                    <span class="fa fa-chevron-right" aria-hidden="true"></span>
+                </button>
+                <div class="container" id="personal-details">
                         <div class="content">
-                            <b>Name:</b>
+                            <b>Name</b>
                             <p>N.S. LogaaMaadhavan</p>
                         </div>
                         <div class="content">
-                            <b>Age:</b>
+                            <b>Age</b>
                             <p>25 Years</p>
                         </div>
                         <div class="content">
-                            <b>DOB:</b>
+                            <b>DOB</b>
                             <p>26/12/2001</p>
                         </div>
                         <div class="content">
-                            <b>Place:</b>
+                            <b>Place</b>
                             <p>Palanganatham, Madurai</p>
                         </div>
                         <div class="content">
-                            <b>Height:</b>
+                            <b>Height</b>
                             <p>5.4 ft</p>
                         </div>
                         <div class="content">
-                            <b>Weight:</b>
+                            <b>Weight</b>
                             <p>70 kg</p>
                         </div>
                         <div class="content">
-                            <b>Blood Group:</b>
+                            <b>Blood Group</b>
                             <p>O<sup>+ve</sup></p>
                         </div>
                         <div class="content">
-                            <b>Complexion:</b>
+                            <b>Complexion</b>
                             <p>Medium Skin Tone</p>
                         </div>
                     </div>
                 </section>
 
                 <section class="details-section">
-                    <div class="accordion-header">
-                        <h3>Family Details</h3>
-                        <span class="fa fa-chevron-right"></span>
-                    </div>
-                    <div class="container">
+                <button class="accordion-header" aria-expanded="false" aria-controls="family-details">
+                    <h3>Family Details</h3>
+                    <span class="fa fa-chevron-right" aria-hidden="true"></span>
+                </button>
+                <div class="container" id="family-details">
                         <div class="content">
-                            <b>Father:</b>
+                            <b>Father</b>
                             <p>N. Senthil Kumar (TNSTC Conductor)</p>
                         </div>
                         <div class="content">
@@ -70,36 +78,36 @@
                             <p>9842176114</p>
                         </div>
                         <div class="content">
-                            <b>Mother:</b>
+                            <b>Mother</b>
                             <p>M.P. Sumathi (Teacher)</p>
                         </div>
                         <div class="content">
-                            <b>Mother's Phone:</b>
+                            <b>Mother's Phone</b>
                             <p>6369945304</p>
                         </div>
                         <div class="content">
-                            <b>Younger Sister:</b>
+                            <b>Younger Sister</b>
                             <p>N.S. Sindhu (Unmarried)</p>
                         </div>
                         <div class="content">
-                            <b>Native Place:</b>
+                            <b>Native Place</b>
                             <p>Madurai</p>
                         </div>
                         <div class="content">
-                            <b>House:</b>
+                            <b>House</b>
                             <p>Own House</p>
                         </div>
                     </div>
                 </section>
                 
                 <section class="details-section">
-                    <div class="accordion-header">
-                        <h3>Religious / Horoscope Details</h3>
-                        <span class="fa fa-chevron-right"></span>
-                    </div>
-                    <div class="container">
+                <button class="accordion-header" aria-expanded="false" aria-controls="religious-details">
+                    <h3>Religious / Horoscope Details</h3>
+                    <span class="fa fa-chevron-right" aria-hidden="true"></span>
+                </button>
+                <div class="container" id="religious-details">
                         <div class="content">
-                            <b>Religion:</b>
+                            <b>Religion</b>
                             <p>Hindu</p>
                         </div>
                         <div class="content">
@@ -107,77 +115,111 @@
                             <p>Rajakula Agamudaiyar</p>
                         </div>
                         <div class="content">
-                            <b>Raasi:</b>
+                            <b>Raasi</b>
                             <p>Mesham (Aries)</p>
                         </div>
                         <div class="content">
-                            <b>Natchathiram:</b>
+                            <b>Natchathiram</b>
                             <p>Barani</p>
                         </div>
                         <div class="content">
-                            <b>Dosham:</b>
+                            <b>Dosham</b>
                             <p>No</p>
                         </div>
                     </div>
                 </section>
 
                 <section class="details-section">
-                    <div class="accordion-header">
-                        <h3>Educational & Professional Details</h3>
-                        <span class="fa fa-chevron-right"></span>
-                    </div>
-                    <div class="container">
+                <button class="accordion-header" aria-expanded="false" aria-controls="professional-details">
+                    <h3>Educational & Professional Details</h3>
+                    <span class="fa fa-chevron-right" aria-hidden="true"></span>
+                </button>
+                <div class="container" id="professional-details">
                         <div class="content">
-                            <b>Education:</b>
+                            <b>Education</b>
                             <p>BE - ECE</p>
                         </div>
                         <div class="content">
-                            <b>Occupation:</b>
-                            <p>Network Engineer</p>
+                            <b>Occupation</b>
+                            <p>Network Associate</p>
                         </div>
                         <div class="content">
-                            <b>Company:</b>
-                            <p>Nokia Siemens Networks, Chennai</p>
+                            <b>Company</b>
+                            <p>HCL Tech, Madurai</p>
                         </div>
                         <div class="content">
-                            <b>Annual Income:</b>
-                            <p>3.5 LPA</p>
+                            <b>Annual Income</b>
+                            <p> LPA</p>
                         </div>
                     </div>
                 </section>
             </main>
 
             <aside>
-                <div class="profile">
-                    <img src="./assets/maadhavan.jpeg" title="Logaamaadhavan" />
-                </div>
+            <div class="profile">
+                <img src="./assets/maadhavan.jpeg" alt="Logaamaadhavan - Professional headshot" loading="lazy">
+            </div>
 
-                <div class="social-links">
-                    <a href="tel:+917339440612"><span title="Phone" class="fa fa-phone"></span></a>
-                    <a href="mailto:loguns2612@gmail.com"><span title="G-Mail" class="fa fa-envelope"></span></a>
-                    <a href="https://www.instagram.com/mt__p_i_l_o_t" target="_blank" rel="noreferrer"><span title="Instagram" class="fab fa-instagram"></span></a>
-                    <a href="https://www.linkedin.com/in/loga-madhavan-b32a2423b" target="_blank" rel="noreferrer"><span title="LinkedIn" class="fab fa-linkedin"></span></a>
-                </div>
+            <div class="social-links">
+                <a href="tel:+917339440612" aria-label="Call Logaamaadhavan">
+                    <span class="fa fa-phone" aria-hidden="true"></span>
+                </a>
+                <a href="mailto:loguns2612@gmail.com" aria-label="Email Logaamaadhavan">
+                    <span class="fa fa-envelope" aria-hidden="true"></span>
+                </a>
+                <a href="https://www.instagram.com/mt__p_i_l_o_t" target="_blank" rel="noopener noreferrer" aria-label="Follow on Instagram">
+                    <span class="fab fa-instagram" aria-hidden="true"></span>
+                </a>
+                <a href="https://www.linkedin.com/in/loga-madhavan-b32a2423b" target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn">
+                    <span class="fab fa-linkedin" aria-hidden="true"></span>
+                </a>
+            </div>
             </aside>
         </div>
 
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                document.querySelectorAll(".accordion-header").forEach(element => {
-                    element.addEventListener('click', function () {
-                        if (!element.nextElementSibling.classList.contains('show')) {
-                            element.nextElementSibling.classList.add('show');
-                            element.querySelector("span").className = 'fa fa-chevron-down';
-                            element.style.border = '2px solid #333';
-                        } else {
-                            element.nextElementSibling.classList.remove('show');
-                            element.querySelector("span").className = 'fa fa-chevron-right';
-                            element.style.border = 'none';
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const accordionHeaders = document.querySelectorAll(".accordion-header");
+
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function () {
+                    const container = this.nextElementSibling;
+                    const icon = this.querySelector(".fa");
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+                    // Close all other accordions
+                    accordionHeaders.forEach(otherHeader => {
+                        if (otherHeader !== this) {
+                            const otherContainer = otherHeader.nextElementSibling;
+                            const otherIcon = otherHeader.querySelector(".fa");
+                            otherContainer.classList.remove('show');
+                            otherHeader.setAttribute('aria-expanded', 'false');
+                            otherIcon.className = 'fa fa-chevron-right';
                         }
                     });
+
+                    // Toggle current accordion
+                    if (!isExpanded) {
+                        container.classList.add('show');
+                        this.setAttribute('aria-expanded', 'true');
+                        icon.className = 'fa fa-chevron-down';
+                    } else {
+                        container.classList.remove('show');
+                        this.setAttribute('aria-expanded', 'false');
+                        icon.className = 'fa fa-chevron-right';
+                    }
+                });
+
+                // Keyboard accessibility
+                header.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.click();
+                    }
                 });
             });
-        </script>
+        });
+    </script>
     </body>
 
 </html>
