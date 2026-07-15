@@ -19,9 +19,6 @@
     </script>
 </head>
     <body>
-        <div class="bg-glow-1"></div>
-        <div class="bg-glow-2"></div>
-
         <header>
             <h1>Personal Data</h1>
             <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle light/dark theme">
@@ -230,6 +227,45 @@
                     </div>
                 </section>
             </main>
+
+            <!-- Standalone Gallery Card (always visible, no accordion) -->
+            <section class="gallery-card" aria-label="Photo Gallery">
+                <div class="gallery-card-header">
+                    <div class="gallery-card-title-group">
+                        <i class="fa-solid fa-images gallery-card-icon" aria-hidden="true"></i>
+                        <div>
+                            <h3 class="gallery-card-title">Gallery</h3>
+                            <p class="gallery-card-subtitle">Tap any photo to view full size</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="photo-gallery">
+                    <div class="photo-card" onclick="openLightbox('./assets/stock-1.jpg')" role="button" aria-label="View photo 1">
+                        <img src="./assets/stock-1.jpg" alt="Photo 1" loading="lazy">
+                        <div class="photo-overlay">
+                            <i class="fa-solid fa-expand" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="photo-card" onclick="openLightbox('./assets/stock-2.jpg')" role="button" aria-label="View photo 2">
+                        <img src="./assets/stock-2.jpg" alt="Photo 2" loading="lazy">
+                        <div class="photo-overlay">
+                            <i class="fa-solid fa-expand" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="photo-card" onclick="openLightbox('./assets/stock-3.jpg')" role="button" aria-label="View photo 3">
+                        <img src="./assets/stock-3.jpg" alt="Photo 3" loading="lazy">
+                        <div class="photo-overlay">
+                            <i class="fa-solid fa-expand" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="photo-card" onclick="openLightbox('./assets/stock-4.jpg')" role="button" aria-label="View photo 4">
+                        <img src="./assets/stock-4.jpg" alt="Photo 4" loading="lazy">
+                        <div class="photo-overlay">
+                            <i class="fa-solid fa-expand" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
 
         <!-- Lightbox Modal -->

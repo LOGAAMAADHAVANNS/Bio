@@ -147,31 +147,6 @@ body::after {
   display: none;
 }
 
-/* Glowing Background Blobs */
-.bg-glow-1 {
-  position: absolute;
-  width: 350px;
-  height: 350px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
-  top: -100px;
-  left: -50px;
-  pointer-events: none;
-  z-index: -1;
-}
-
-.bg-glow-2 {
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-  bottom: 10%;
-  right: -100px;
-  pointer-events: none;
-  z-index: -1;
-}
-
 /* Header & Title */
 header {
   max-width: 1200px;
@@ -636,6 +611,123 @@ main {
   opacity: 1;
 }
 
+/* ── Standalone Gallery Card ──────────────────────────── */
+.gallery-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.gallery-card:hover {
+  border-color: var(--card-hover-border);
+  box-shadow: var(--shadow-lg), 0 5px 20px rgba(99, 102, 241, 0.06);
+}
+
+.gallery-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.75rem 0 1.75rem;
+}
+
+.gallery-card-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+
+.gallery-card-icon {
+  font-size: 1.4rem;
+  color: var(--primary);
+}
+
+.gallery-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.gallery-card-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0.1rem 0 0;
+}
+
+/* ── Photo Gallery Grid ───────────────────────────────── */
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.875rem;
+  padding: 1.5rem 1.75rem 1.75rem;
+}
+
+@media (min-width: 640px) {
+  .photo-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .photo-gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.photo-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 1 / 1;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: var(--transition);
+}
+
+.photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(99, 102, 241, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.6rem;
+  opacity: 0;
+  transition: var(--transition);
+  backdrop-filter: blur(3px);
+}
+
+.photo-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.photo-card:hover img {
+  transform: scale(1.06);
+}
+
+.photo-card:hover .photo-overlay {
+  opacity: 1;
+}
+
 /* Lightbox Modal */
 .lightbox {
   position: fixed;
@@ -643,7 +735,7 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(15, 23, 42, 0.95);
+  background: rgba(15, 23, 42, 0.125);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   display: flex;
@@ -744,14 +836,6 @@ main {
 
   body::after {
     border-bottom-right-radius: 12px;
-  }
-
-  .lightbox {
-    width: 82%;
-    height: 100%;
-    border-radius: 12px;
-    backdrop-filter: blur(12px);
-    overflow-x: hidden;
   }
 
   .horoscope-gallery {
