@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,277 +9,301 @@
     <meta name="theme-color" content="#6366f1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="style.css">
     <script>
         // Apply theme immediately to prevent flashing
-        (function() {
+        (function () {
             const savedTheme = localStorage.getItem('theme') || 'dark';
             document.documentElement.setAttribute('data-theme', savedTheme);
         })();
     </script>
 </head>
-    <body>
-        <header>
-            <h1>Personal Data</h1>
-            <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle light/dark theme">
-                <span class="fa-solid fa-moon"></span>
-                <span class="fa-solid fa-sun"></span>
-            </button>
-        </header>
 
-        <div class="root">
-            <!-- Hero Cover & Profile Banner Section -->
-            <div class="hero-section">
-                <div class="cover-photo-container">
-                    <img src="./assets/cover_photo.jpg" class="cover-photo-img" alt="Cover photo of Logaamaadhavan with family">
-                    <div class="cover-overlay"></div>
+<body>
+    <header>
+        <h1>Personal Data</h1>
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle light/dark theme">
+            <span class="fa-solid fa-moon"></span>
+            <span class="fa-solid fa-sun"></span>
+        </button>
+    </header>
+
+    <div class="root">
+        <!-- Hero Cover & Profile Banner Section -->
+        <div class="hero-section">
+            <div class="cover-photo-container">
+                <img src="./assets/cover_photo.jpg" class="cover-photo-img"
+                    alt="Cover photo of Logaamaadhavan with family">
+                <div class="cover-overlay"></div>
+            </div>
+            <div class="profile-area">
+                <div class="profile-avatar">
+                    <img src="./assets/maadhavan.jpeg" alt="Logaamaadhavan - Professional headshot">
                 </div>
-                <div class="profile-area">
-                    <div class="profile-avatar">
-                        <img src="./assets/maadhavan.jpeg" alt="Logaamaadhavan - Professional headshot">
-                    </div>
-                    <div class="profile-info">
-                        <h2>N.S. LogaaMaadhavan</h2>
-                        <p class="subtitle"><i class="fa-solid fa-briefcase" aria-hidden="true"></i> Network Associate at HCL Tech, Madurai</p>
-                        
-                        <div class="social-links">
-                            <a href="tel:+917339440612" aria-label="Call Logaamaadhavan">
-                                <span class="fa fa-phone" aria-hidden="true"></span>
-                            </a>
-                            <a href="mailto:loguns2612@gmail.com" aria-label="Email Logaamaadhavan">
-                                <span class="fa fa-envelope" aria-hidden="true"></span>
-                            </a>
-                            <a href="https://www.instagram.com/mt__p_i_l_o_t" target="_blank" rel="noopener noreferrer" aria-label="Follow on Instagram">
-                                <span class="fab fa-instagram" aria-hidden="true"></span>
-                            </a>
-                            <a href="https://www.linkedin.com/in/loga-madhavan-b32a2423b" target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn">
-                                <span class="fab fa-linkedin" aria-hidden="true"></span>
-                            </a>
-                        </div>
+                <div class="profile-info">
+                    <h2>N.S. LogaaMaadhavan</h2>
+                    <p class="subtitle"><i class="fa-solid fa-briefcase" aria-hidden="true"></i> Network Associate at
+                        HCL Tech, Madurai</p>
+
+                    <div class="social-links">
+                        <a href="tel:+917339440612" aria-label="Call Logaamaadhavan">
+                            <span class="fa fa-phone" aria-hidden="true"></span>
+                        </a>
+                        <a href="mailto:loguns2612@gmail.com" aria-label="Email Logaamaadhavan">
+                            <span class="fa fa-envelope" aria-hidden="true"></span>
+                        </a>
+                        <a href="https://www.instagram.com/mt__p_i_l_o_t" target="_blank" rel="noopener noreferrer"
+                            aria-label="Follow on Instagram">
+                            <span class="fab fa-instagram" aria-hidden="true"></span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/loga-madhavan-b32a2423b" target="_blank"
+                            rel="noopener noreferrer" aria-label="Connect on LinkedIn">
+                            <span class="fab fa-linkedin" aria-hidden="true"></span>
+                        </a>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <main>
-                <!-- Personal Details Accordion -->
-                <section class="details-section">
-                    <button class="accordion-header" aria-expanded="false" aria-controls="personal-details">
-                        <h3>Personal Details</h3>
-                        <span class="fa fa-chevron-right" aria-hidden="true"></span>
-                    </button>
-                    <div class="container" id="personal-details">
-                        <div class="info-grid">
-                            <div class="content">
-                                <b>Name</b>
-                                <p>N.S. LogaaMaadhavan</p>
-                            </div>
-                            <div class="content">
-                                <b>Age</b>
-                                <p>25 Years</p>
-                            </div>
-                            <div class="content">
-                                <b>DOB</b>
-                                <p>26/12/2001</p>
-                            </div>
-                            <div class="content">
-                                <b>Place</b>
-                                <p>Palanganatham, Madurai</p>
-                            </div>
-                            <div class="content">
-                                <b>Height</b>
-                                <p>5.4 ft</p>
-                            </div>
-                            <div class="content">
-                                <b>Weight</b>
-                                <p>70 kg</p>
-                            </div>
-                            <div class="content">
-                                <b>Blood Group</b>
-                                <p>O<sup>+ve</sup></p>
-                            </div>
-                            <div class="content">
-                                <b>Complexion</b>
-                                <p>Medium Skin Tone</p>
-                            </div>
+        <main>
+            <!-- Personal Details Accordion -->
+            <section class="details-section">
+                <button class="accordion-header" aria-expanded="false" aria-controls="personal-details">
+                    <h3>Personal Details</h3>
+                    <span class="fa fa-chevron-right" aria-hidden="true"></span>
+                </button>
+                <div class="container" id="personal-details">
+                    <div class="info-grid">
+                        <div class="content">
+                            <b>Name</b>
+                            <p>N.S. LogaaMaadhavan</p>
                         </div>
-                    </div>
-                </section>
-
-                <!-- Family Details Accordion -->
-                <section class="details-section">
-                    <button class="accordion-header" aria-expanded="false" aria-controls="family-details">
-                        <h3>Family Details</h3>
-                        <span class="fa fa-chevron-right" aria-hidden="true"></span>
-                    </button>
-                    <div class="container" id="family-details">
-                        <div class="info-grid">
-                            <div class="content">
-                                <b>Father</b>
-                                <p>N. Senthil Kumar (TNSTC Conductor)</p>
-                            </div>
-                            <div class="content">
-                                <b>Father's Phone</b>
-                                <p>9842176114</p>
-                            </div>
-                            <div class="content">
-                                <b>Mother</b>
-                                <p>M.P. Sumathi (Teacher)</p>
-                            </div>
-                            <div class="content">
-                                <b>Mother's Phone</b>
-                                <p>6369945304</p>
-                            </div>
-                            <div class="content">
-                                <b>Younger Sister</b>
-                                <p>N.S. Sindhu (Unmarried)</p>
-                            </div>
-                            <div class="content">
-                                <b>Native Place</b>
-                                <p>Madurai</p>
-                            </div>
-                            <div class="content">
-                                <b>House</b>
-                                <p>Own House</p>
-                            </div>
+                        <div class="content">
+                            <b>Age</b>
+                            <p>25 Years</p>
                         </div>
-                    </div>
-                </section>
-                
-                <!-- Religious / Horoscope Details Accordion -->
-                <section class="details-section">
-                    <button class="accordion-header" aria-expanded="false" aria-controls="religious-details">
-                        <h3>Religious / Horoscope Details</h3>
-                        <span class="fa fa-chevron-right" aria-hidden="true"></span>
-                    </button>
-                    <div class="container" id="religious-details">
-                        <div class="info-grid">
-                            <div class="content">
-                                <b>Religion</b>
-                                <p>Hindu</p>
-                            </div>
-                            <div class="content">
-                                <b>Caste</b>
-                                <p>Rajakula Agamudaiyar</p>
-                            </div>
-                            <div class="content">
-                                <b>Raasi</b>
-                                <p>Mesham (Aries)</p>
-                            </div>
-                            <div class="content">
-                                <b>Natchathiram</b>
-                                <p>Barani</p>
-                            </div>
-                            <div class="content">
-                                <b>Dosham</b>
-                                <p>No</p>
-                            </div>
+                        <div class="content">
+                            <b>DOB</b>
+                            <p>26/12/2001</p>
                         </div>
-
-                        <div class="horoscope-gallery-container">
-                            <h4 class="horoscope-title">Horoscope Charts</h4>
-                            <div class="horoscope-gallery">
-                                <div class="horoscope-card" onclick="openLightbox('./assets/HS-1.jpg')" role="button" aria-label="Open Horoscope Chart 1">
-                                    <img src="./assets/HS-1.jpg" alt="Horoscope Chart 1" loading="lazy">
-                                    <div class="zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i></div>
-                                </div>
-                                <div class="horoscope-card" onclick="openLightbox('./assets/HS-2.jpg')" role="button" aria-label="Open Horoscope Chart 2">
-                                    <img src="./assets/HS-2.jpg" alt="Horoscope Chart 2" loading="lazy">
-                                    <div class="zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i></div>
-                                </div>
-                                <div class="horoscope-card" onclick="openLightbox('./assets/HS-3.jpg')" role="button" aria-label="Open Horoscope Chart 3">
-                                    <img src="./assets/HS-3.jpg" alt="Horoscope Chart 3" loading="lazy">
-                                    <div class="zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i></div>
-                                </div>
-                                <div class="horoscope-card" onclick="openLightbox('./assets/HS-4.jpg')" role="button" aria-label="Open Horoscope Chart 4">
-                                    <img src="./assets/HS-4.jpg" alt="Horoscope Chart 4" loading="lazy">
-                                    <div class="zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i></div>
-                                </div>
-                            </div>
+                        <div class="content">
+                            <b>Place</b>
+                            <p>Palanganatham, Madurai</p>
                         </div>
-                    </div>
-                </section>
-
-                <!-- Educational & Professional Details Accordion -->
-                <section class="details-section">
-                    <button class="accordion-header" aria-expanded="false" aria-controls="professional-details">
-                        <h3>Educational & Professional Details</h3>
-                        <span class="fa fa-chevron-right" aria-hidden="true"></span>
-                    </button>
-                    <div class="container" id="professional-details">
-                        <div class="info-grid">
-                            <div class="content">
-                                <b>Education</b>
-                                <p>BE - ECE</p>
-                            </div>
-                            <div class="content">
-                                <b>Occupation</b>
-                                <p>Network Associate</p>
-                            </div>
-                            <div class="content">
-                                <b>Company</b>
-                                <p>HCL Tech, Madurai</p>
-                            </div>
-                            <div class="content">
-                                <b>Annual Income</b>
-                                <p>4 LPA</p>
-                            </div>
+                        <div class="content">
+                            <b>Height</b>
+                            <p>5.4 ft</p>
                         </div>
-                    </div>
-                </section>
-            </main>
-
-            <!-- Standalone Gallery Card (always visible, no accordion) -->
-            <section class="gallery-card" aria-label="Photo Gallery">
-                <div class="gallery-card-header">
-                    <div class="gallery-card-title-group">
-                        <i class="fa-solid fa-images gallery-card-icon" aria-hidden="true"></i>
-                        <div>
-                            <h3 class="gallery-card-title">Gallery</h3>
-                            <p class="gallery-card-subtitle">Tap any photo to view full size</p>
+                        <div class="content">
+                            <b>Weight</b>
+                            <p>70 kg</p>
                         </div>
-                    </div>
-                </div>
-                <div class="photo-gallery">
-                    <div class="photo-card" onclick="openLightbox('./assets/stock-1.jpg')" role="button" aria-label="View photo 1">
-                        <img src="./assets/stock-1.jpg" alt="Photo 1" loading="lazy">
-                        <div class="photo-overlay">
-                            <i class="fa-solid fa-expand" aria-hidden="true"></i>
+                        <div class="content">
+                            <b>Blood Group</b>
+                            <p>O<sup>+ve</sup></p>
                         </div>
-                    </div>
-                    <div class="photo-card" onclick="openLightbox('./assets/stock-2.jpg')" role="button" aria-label="View photo 2">
-                        <img src="./assets/stock-2.jpg" alt="Photo 2" loading="lazy">
-                        <div class="photo-overlay">
-                            <i class="fa-solid fa-expand" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                    <div class="photo-card" onclick="openLightbox('./assets/stock-3.jpg')" role="button" aria-label="View photo 3">
-                        <img src="./assets/stock-3.jpg" alt="Photo 3" loading="lazy">
-                        <div class="photo-overlay">
-                            <i class="fa-solid fa-expand" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                    <div class="photo-card" onclick="openLightbox('./assets/stock-4.jpg')" role="button" aria-label="View photo 4">
-                        <img src="./assets/stock-4.jpg" alt="Photo 4" loading="lazy">
-                        <div class="photo-overlay">
-                            <i class="fa-solid fa-expand" aria-hidden="true"></i>
+                        <div class="content">
+                            <b>Complexion</b>
+                            <p>Medium Skin Tone</p>
                         </div>
                     </div>
                 </div>
             </section>
-        </div>
 
-        <!-- Lightbox Modal -->
-        <div id="lightbox" class="lightbox" onclick="closeLightbox()" role="dialog" aria-modal="true" aria-label="Horoscope Chart Image Viewer">
-            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-            <img class="lightbox-content" id="lightbox-img" onclick="event.stopPropagation()" alt="Enlarged Horoscope Chart">
-        </div>
+            <!-- Family Details Accordion -->
+            <section class="details-section">
+                <button class="accordion-header" aria-expanded="false" aria-controls="family-details">
+                    <h3>Family Details</h3>
+                    <span class="fa fa-chevron-right" aria-hidden="true"></span>
+                </button>
+                <div class="container" id="family-details">
+                    <div class="info-grid">
+                        <div class="content">
+                            <b>Father</b>
+                            <p>N. Senthil Kumar (TNSTC Conductor)</p>
+                        </div>
+                        <div class="content">
+                            <b>Father's Phone</b>
+                            <p>9842176114</p>
+                        </div>
+                        <div class="content">
+                            <b>Mother</b>
+                            <p>M.P. Sumathi (Teacher)</p>
+                        </div>
+                        <div class="content">
+                            <b>Mother's Phone</b>
+                            <p>6369945304</p>
+                        </div>
+                        <div class="content">
+                            <b>Younger Sister</b>
+                            <p>N.S. Sindhu (Unmarried)</p>
+                        </div>
+                        <div class="content">
+                            <b>Native Place</b>
+                            <p>Madurai</p>
+                        </div>
+                        <div class="content">
+                            <b>House</b>
+                            <p>Own House</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Religious / Horoscope Details Accordion -->
+            <section class="details-section">
+                <button class="accordion-header" aria-expanded="false" aria-controls="religious-details">
+                    <h3>Religious / Horoscope Details</h3>
+                    <span class="fa fa-chevron-right" aria-hidden="true"></span>
+                </button>
+                <div class="container" id="religious-details">
+                    <div class="info-grid">
+                        <div class="content">
+                            <b>Religion</b>
+                            <p>Hindu</p>
+                        </div>
+                        <div class="content">
+                            <b>Caste</b>
+                            <p>Rajakula Agamudaiyar</p>
+                        </div>
+                        <div class="content">
+                            <b>Raasi</b>
+                            <p>Mesham (Aries)</p>
+                        </div>
+                        <div class="content">
+                            <b>Natchathiram</b>
+                            <p>Barani</p>
+                        </div>
+                        <div class="content">
+                            <b>Dosham</b>
+                            <p>No</p>
+                        </div>
+                    </div>
+
+                    <div class="horoscope-gallery-container">
+                        <div class="horoscope-title">
+                            <h4>Horoscope Charts</h4>
+                            <p class="gallery-card-subtitle">Tap any photo to view full size</p>
+                        </div>
+                        <div class="horoscope-gallery">
+                            <div class="horoscope-card" onclick="openLightbox('./assets/HS-1.jpg')" role="button"
+                                aria-label="Open Horoscope Chart 1">
+                                <img src="./assets/HS-1.jpg" alt="Horoscope Chart 1" loading="lazy">
+                                <div class="zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus"
+                                        aria-hidden="true"></i></div>
+                            </div>
+                            <div class="horoscope-card" onclick="openLightbox('./assets/HS-2.jpg')" role="button"
+                                aria-label="Open Horoscope Chart 2">
+                                <img src="./assets/HS-2.jpg" alt="Horoscope Chart 2" loading="lazy">
+                                <div class="zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus"
+                                        aria-hidden="true"></i></div>
+                            </div>
+                            <div class="horoscope-card" onclick="openLightbox('./assets/HS-3.jpg')" role="button"
+                                aria-label="Open Horoscope Chart 3">
+                                <img src="./assets/HS-3.jpg" alt="Horoscope Chart 3" loading="lazy">
+                                <div class="zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus"
+                                        aria-hidden="true"></i></div>
+                            </div>
+                            <div class="horoscope-card" onclick="openLightbox('./assets/HS-4.jpg')" role="button"
+                                aria-label="Open Horoscope Chart 4">
+                                <img src="./assets/HS-4.jpg" alt="Horoscope Chart 4" loading="lazy">
+                                <div class="zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus"
+                                        aria-hidden="true"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Educational & Professional Details Accordion -->
+            <section class="details-section">
+                <button class="accordion-header" aria-expanded="false" aria-controls="professional-details">
+                    <h3>Educational & Professional Details</h3>
+                    <span class="fa fa-chevron-right" aria-hidden="true"></span>
+                </button>
+                <div class="container" id="professional-details">
+                    <div class="info-grid">
+                        <div class="content">
+                            <b>Education</b>
+                            <p>BE - ECE</p>
+                        </div>
+                        <div class="content">
+                            <b>Occupation</b>
+                            <p>Network Associate</p>
+                        </div>
+                        <div class="content">
+                            <b>Company</b>
+                            <p>HCL Tech, Madurai</p>
+                        </div>
+                        <div class="content">
+                            <b>Annual Income</b>
+                            <p>4 LPA</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Standalone Gallery Card (always visible, no accordion) -->
+        <section class="gallery-card" aria-label="Photo Gallery">
+            <div class="gallery-card-header">
+                <div class="gallery-card-title-group">
+                    <i class="fa-solid fa-images gallery-card-icon" aria-hidden="true"></i>
+                    <div>
+                        <h3 class="gallery-card-title">Gallery</h3>
+                        <p class="gallery-card-subtitle">Tap any photo to view full size</p>
+                    </div>
+                </div>
+            </div>
+            <div class="photo-gallery">
+                <div class="photo-card" onclick="openLightbox('./assets/cover_photo.jpg')" role="button"
+                    aria-label="View photo 0">
+                    <img src="./assets/cover_photo.jpg" alt="Photo 0" loading="lazy">
+                    <div class="photo-overlay">
+                        <i class="fa-solid fa-expand" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="photo-card" onclick="openLightbox('./assets/stock-2.jpg')" role="button"
+                    aria-label="View photo 2">
+                    <img src="./assets/stock-2.jpg" alt="Photo 2" loading="lazy">
+                    <div class="photo-overlay">
+                        <i class="fa-solid fa-expand" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="photo-card" onclick="openLightbox('./assets/stock-3.jpg')" role="button"
+                    aria-label="View photo 3">
+                    <img src="./assets/stock-3.jpg" alt="Photo 3" loading="lazy">
+                    <div class="photo-overlay">
+                        <i class="fa-solid fa-expand" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="photo-card" onclick="openLightbox('./assets/stock-4.jpg')" role="button"
+                    aria-label="View photo 4">
+                    <img src="./assets/stock-4.jpg" alt="Photo 4" loading="lazy">
+                    <div class="photo-overlay">
+                        <i class="fa-solid fa-expand" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()" role="dialog" aria-modal="true"
+        aria-label="Horoscope Chart Image Viewer">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" onclick="event.stopPropagation()"
+            alt="Enlarged Horoscope Chart">
+    </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Theme Toggle Logic
             const themeToggleBtn = document.getElementById("theme-toggle");
-            themeToggleBtn.addEventListener("click", function() {
+            themeToggleBtn.addEventListener("click", function () {
                 const currentTheme = document.documentElement.getAttribute("data-theme");
                 const newTheme = currentTheme === "light" ? "dark" : "light";
                 document.documentElement.setAttribute("data-theme", newTheme);
@@ -322,7 +347,7 @@
             });
 
             // Lightbox Modal Functions
-            window.openLightbox = function(src) {
+            window.openLightbox = function (src) {
                 const lightbox = document.getElementById("lightbox");
                 const lightboxImg = document.getElementById("lightbox-img");
                 lightboxImg.src = src;
@@ -330,19 +355,20 @@
                 document.body.style.overflow = "hidden"; // Prevent scrolling behind modal
             };
 
-            window.closeLightbox = function() {
+            window.closeLightbox = function () {
                 const lightbox = document.getElementById("lightbox");
                 lightbox.classList.remove("active");
                 document.body.style.overflow = ""; // Restore scrolling
             };
 
             // Keyboard support for Lightbox (ESC key)
-            document.addEventListener('keydown', function(e) {
+            document.addEventListener('keydown', function (e) {
                 if (e.key === 'Escape') {
                     closeLightbox();
                 }
             });
         });
     </script>
-    </body>
+</body>
+
 </html>
