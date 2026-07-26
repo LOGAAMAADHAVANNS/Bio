@@ -949,13 +949,13 @@ main {
 }
 
 @media (max-width: 600px) {
+  /* On touch screens, hide arrows — swipe is the interaction */
   .lightbox-nav {
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
+    display: none !important;
   }
-  .lightbox-prev { left: 0.5rem; }
-  .lightbox-next { right: 0.5rem; }
+  .lightbox-dots {
+    bottom: 1.75rem;
+  }
 }
 
 /* Image counter badge  e.g. "2 / 4" */
