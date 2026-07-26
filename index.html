@@ -40,8 +40,9 @@
                 <div class="cover-overlay"></div>
             </div>
             <div class="profile-area">
-                <div class="profile-avatar">
+                <div class="profile-avatar" onclick="openLightbox('profile', 0)" role="button" aria-label="View profile photo full size" tabindex="0">
                     <img src="./assets/maadhavan.jpeg" alt="Logaamaadhavan - Professional headshot">
+                    <div class="profile-zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i></div>
                 </div>
                 <div class="profile-info">
                     <h2>N.S. LogaaMaadhavan</h2>
@@ -189,25 +190,25 @@
                             <p class="gallery-card-subtitle">Tap any photo to view full size</p>
                         </div>
                         <div class="horoscope-gallery">
-                            <div class="horoscope-card" onclick="openLightbox('./assets/HS-1.jpg')" role="button"
+                            <div class="horoscope-card" onclick="openLightbox('horoscope', 0)" role="button"
                                 aria-label="Open Horoscope Chart 1">
                                 <img src="./assets/HS-1.jpg" alt="Horoscope Chart 1" loading="lazy">
                                 <div class="zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus"
                                         aria-hidden="true"></i></div>
                             </div>
-                            <div class="horoscope-card" onclick="openLightbox('./assets/HS-2.jpg')" role="button"
+                            <div class="horoscope-card" onclick="openLightbox('horoscope', 1)" role="button"
                                 aria-label="Open Horoscope Chart 2">
                                 <img src="./assets/HS-2.jpg" alt="Horoscope Chart 2" loading="lazy">
                                 <div class="zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus"
                                         aria-hidden="true"></i></div>
                             </div>
-                            <div class="horoscope-card" onclick="openLightbox('./assets/HS-3.jpg')" role="button"
+                            <div class="horoscope-card" onclick="openLightbox('horoscope', 2)" role="button"
                                 aria-label="Open Horoscope Chart 3">
                                 <img src="./assets/HS-3.jpg" alt="Horoscope Chart 3" loading="lazy">
                                 <div class="zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus"
                                         aria-hidden="true"></i></div>
                             </div>
-                            <div class="horoscope-card" onclick="openLightbox('./assets/HS-4.jpg')" role="button"
+                            <div class="horoscope-card" onclick="openLightbox('horoscope', 3)" role="button"
                                 aria-label="Open Horoscope Chart 4">
                                 <img src="./assets/HS-4.jpg" alt="Horoscope Chart 4" loading="lazy">
                                 <div class="zoom-overlay"><i class="fa-solid fa-magnifying-glass-plus"
@@ -259,28 +260,28 @@
                 </div>
             </div>
             <div class="photo-gallery">
-                <div class="photo-card" onclick="openLightbox('./assets/cover_photo.jpg')" role="button"
-                    aria-label="View photo 0">
-                    <img src="./assets/cover_photo.jpg" alt="Photo 0" loading="lazy">
+                <div class="photo-card" onclick="openLightbox('gallery', 0)" role="button"
+                    aria-label="View photo 1">
+                    <img src="./assets/cover_photo.jpg" alt="Photo 1" loading="lazy">
                     <div class="photo-overlay">
                         <i class="fa-solid fa-expand" aria-hidden="true"></i>
                     </div>
                 </div>
-                <div class="photo-card" onclick="openLightbox('./assets/stock-2.jpg')" role="button"
+                <div class="photo-card" onclick="openLightbox('gallery', 1)" role="button"
                     aria-label="View photo 2">
                     <img src="./assets/stock-2.jpg" alt="Photo 2" loading="lazy">
                     <div class="photo-overlay">
                         <i class="fa-solid fa-expand" aria-hidden="true"></i>
                     </div>
                 </div>
-                <div class="photo-card" onclick="openLightbox('./assets/stock-3.jpg')" role="button"
+                <div class="photo-card" onclick="openLightbox('gallery', 2)" role="button"
                     aria-label="View photo 3">
                     <img src="./assets/stock-3.jpg" alt="Photo 3" loading="lazy">
                     <div class="photo-overlay">
                         <i class="fa-solid fa-expand" aria-hidden="true"></i>
                     </div>
                 </div>
-                <div class="photo-card" onclick="openLightbox('./assets/stock-4.jpg')" role="button"
+                <div class="photo-card" onclick="openLightbox('gallery', 3)" role="button"
                     aria-label="View photo 4">
                     <img src="./assets/stock-4.jpg" alt="Photo 4" loading="lazy">
                     <div class="photo-overlay">
@@ -293,10 +294,19 @@
 
     <!-- Lightbox Modal -->
     <div id="lightbox" class="lightbox" onclick="closeLightbox()" role="dialog" aria-modal="true"
-        aria-label="Horoscope Chart Image Viewer">
-        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-        <img class="lightbox-content" id="lightbox-img" onclick="event.stopPropagation()"
-            alt="Enlarged Horoscope Chart">
+        aria-label="Image Viewer">
+        <span class="lightbox-close" id="lightbox-close-btn" onclick="closeLightbox()" aria-label="Close">&times;</span>
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev" onclick="event.stopPropagation(); navigateLightbox(-1)" aria-label="Previous image">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div class="lightbox-img-wrapper" onclick="event.stopPropagation()">
+            <img class="lightbox-content" id="lightbox-img" alt="Enlarged photo">
+        </div>
+        <button class="lightbox-nav lightbox-next" id="lightbox-next" onclick="event.stopPropagation(); navigateLightbox(1)" aria-label="Next image">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <div class="lightbox-counter" id="lightbox-counter">1 / 4</div>
+        <div class="lightbox-dots" id="lightbox-dots"></div>
     </div>
 
     <script>
@@ -346,26 +356,121 @@
                 });
             });
 
+            // Profile avatar keyboard accessibility
+            const profileAvatar = document.querySelector('.profile-avatar');
+            if (profileAvatar) {
+                profileAvatar.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox('profile', 0);
+                    }
+                });
+            }
+
+
+            // ── Lightbox Navigation State ──────────────────────────
+            const imageGroups = {
+                profile:   ['./assets/maadhavan.jpeg'],
+                horoscope: ['./assets/HS-1.jpg', './assets/HS-2.jpg', './assets/HS-3.jpg', './assets/HS-4.jpg'],
+                gallery:   ['./assets/cover_photo.jpg', './assets/stock-2.jpg', './assets/stock-3.jpg', './assets/stock-4.jpg']
+            };
+
+            let currentGroup = [];
+            let currentIndex = 0;
+
+            function renderLightboxImage(direction) {
+                const img = document.getElementById('lightbox-img');
+                const counter = document.getElementById('lightbox-counter');
+                const dotsEl = document.getElementById('lightbox-dots');
+                const prevBtn = document.getElementById('lightbox-prev');
+                const nextBtn = document.getElementById('lightbox-next');
+
+                // Slide-out animation
+                img.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
+                img.style.opacity = '0';
+                img.style.transform = direction > 0 ? 'translateX(-40px) scale(0.95)' : 'translateX(40px) scale(0.95)';
+
+                setTimeout(() => {
+                    img.src = currentGroup[currentIndex];
+                    img.style.transform = direction > 0 ? 'translateX(40px) scale(0.95)' : 'translateX(-40px) scale(0.95)';
+
+                    // Slide-in animation after image starts loading
+                    img.onload = function () {
+                        img.style.transition = 'opacity 0.3s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1)';
+                        img.style.opacity = '1';
+                        img.style.transform = 'translateX(0) scale(1)';
+                    };
+                    // Fallback if already cached
+                    if (img.complete) img.onload();
+                }, 200);
+
+                // Update counter
+                const total = currentGroup.length;
+                counter.textContent = (currentIndex + 1) + ' / ' + total;
+                counter.style.display = total > 1 ? 'block' : 'none';
+
+                // Update dots
+                dotsEl.innerHTML = '';
+                if (total > 1) {
+                    currentGroup.forEach((_, i) => {
+                        const dot = document.createElement('span');
+                        dot.className = 'lightbox-dot' + (i === currentIndex ? ' active' : '');
+                        dot.onclick = function (e) {
+                            e.stopPropagation();
+                            const dir = i > currentIndex ? 1 : -1;
+                            currentIndex = i;
+                            renderLightboxImage(dir);
+                        };
+                        dotsEl.appendChild(dot);
+                    });
+                }
+
+                // Show/hide nav arrows
+                prevBtn.style.display = total > 1 ? 'flex' : 'none';
+                nextBtn.style.display = total > 1 ? 'flex' : 'none';
+            }
+
             // Lightbox Modal Functions
-            window.openLightbox = function (src) {
-                const lightbox = document.getElementById("lightbox");
-                const lightboxImg = document.getElementById("lightbox-img");
-                lightboxImg.src = src;
-                lightbox.classList.add("active");
-                document.body.style.overflow = "hidden"; // Prevent scrolling behind modal
+            window.openLightbox = function (groupName, index) {
+                currentGroup = imageGroups[groupName] || [];
+                currentIndex = index || 0;
+                const lightbox = document.getElementById('lightbox');
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                // Initial render — no direction animation
+                const img = document.getElementById('lightbox-img');
+                img.style.transition = 'none';
+                img.style.opacity = '0';
+                img.style.transform = 'scale(0.92)';
+                img.src = currentGroup[currentIndex];
+                img.onload = function () {
+                    img.style.transition = 'opacity 0.35s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)';
+                    img.style.opacity = '1';
+                    img.style.transform = 'scale(1)';
+                };
+                if (img.complete) img.onload();
+                renderLightboxImage(0);
+            };
+
+            window.navigateLightbox = function (direction) {
+                if (currentGroup.length <= 1) return;
+                currentIndex = (currentIndex + direction + currentGroup.length) % currentGroup.length;
+                renderLightboxImage(direction);
             };
 
             window.closeLightbox = function () {
-                const lightbox = document.getElementById("lightbox");
-                lightbox.classList.remove("active");
-                document.body.style.overflow = ""; // Restore scrolling
+                const lightbox = document.getElementById('lightbox');
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
             };
 
-            // Keyboard support for Lightbox (ESC key)
+            // Keyboard support: ESC = close, ArrowLeft/Right = navigate
             document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape') {
-                    closeLightbox();
-                }
+                const lightbox = document.getElementById('lightbox');
+                if (!lightbox.classList.contains('active')) return;
+                if (e.key === 'Escape')      closeLightbox();
+                if (e.key === 'ArrowLeft')   navigateLightbox(-1);
+                if (e.key === 'ArrowRight')  navigateLightbox(1);
             });
         });
     </script>
